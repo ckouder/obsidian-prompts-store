@@ -4,12 +4,13 @@ const matter = require('gray-matter');
 
 function generatePrompts(rootDir) {
   // Get all markdown files in the root directory
-  const files = fs.readdirSync(rootDir + '/prompts')
+  const promptsDir = path.join(rootDir, 'prompts');
+  const files = fs.readdirSync(promptsDir)
     .filter(file => file.endsWith('.md'));
 
   // Process each file and extract frontmatter
   const prompts = files.map(file => {
-    const content = fs.readFileSync(path.join(rootDir, file), 'utf8');
+    const content = fs.readFileSync(path.join(promptsDir, file), 'utf8');
     const { data } = matter(content);
     
     // Only include files that have both required properties
