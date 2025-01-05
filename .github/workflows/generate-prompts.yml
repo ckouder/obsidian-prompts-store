@@ -1,0 +1,40 @@
+name: Generate Prompts JSON
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  generate-prompts:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          
+      - name: Install dependencies
+        run: npm install gray-matter
+        
+      - name: Generate prompts.json
+        run: node .github/scripts/generate-prompts.js
+        
+      - name: Commit prompts.json if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add prompts.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update prompts.json"
+          
+      - name: Push changes
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }} 
