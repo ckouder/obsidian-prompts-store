@@ -1,6 +1,6 @@
 # Obsidian Prompts Store
 
-A repository of reusable prompts for Obsidian. Each prompt is stored as a markdown file with frontmatter metadata and can be accessed through github-rawusercontent.
+A repository of reusable prompts for Obsidian. Each prompt is stored as a markdown file with frontmatter metadata and can be accessed through raw.githubusercontent.com.
 
 ## Disclaimer
 
