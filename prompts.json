@@ -1,0 +1,27 @@
+[
+  {
+    "filename": "summarize-into-paragraphs",
+    "prompt-name": "Summarize into paragraphs",
+    "prompt-desc": "Summarize long text into paragraphs"
+  },
+  {
+    "filename": "echo",
+    "prompt-name": "Echo",
+    "prompt-desc": "Echo Input without changing anything"
+  },
+  {
+    "filename": "organize-and-categorize",
+    "prompt-name": "Organize and categorize",
+    "prompt-desc": "Organize and categorize input text"
+  },
+  {
+    "filename": "get-todos-and-dones",
+    "prompt-name": "Get todos and dones",
+    "prompt-desc": "Get a list of todos and dones from given text"
+  },
+  {
+    "filename": "SWOT-analysis",
+    "prompt-name": "SWOT analysis",
+    "prompt-desc": "Conduct SWOT Analysis on given text"
+  }
+]
