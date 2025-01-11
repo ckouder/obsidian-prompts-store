@@ -4,17 +4,13 @@
   "type": "module",
   "scripts": {
     "test": "bun test",
-    "start": "bun run ftp-server.ts",
-    "generate": "bun run .github/scripts/generate-prompts.ts",
-    "typecheck": "tsc --noEmit"
+    "generate": "bun run .github/scripts/generate-prompts.ts"
   },
   "dependencies": {
-    "ftp-srv": "^4.6.3",
     "gray-matter": "^4.0.3"
   },
   "devDependencies": {
     "@types/node": "^20.11.5",
-    "bun-types": "latest",
-    "typescript": "^5.3.3"
+    "bun-types": "latest"
   }
 }
