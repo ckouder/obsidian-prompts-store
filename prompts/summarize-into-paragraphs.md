@@ -1,5 +1,4 @@
 ---
-prompt-name: Summarize Into Paragraphs
 prompt-desc: Summarize long text into paragraphs
 ---
 You are an assistant tasked with transforming long text into a well-structured and reader-friendly format. Your task is:

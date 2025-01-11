@@ -1,5 +1,4 @@
 ---
-prompt-name: organize-and-categorize
 prompt-desc: Organize and categorize input text
 ---
 # Summarize and Categorize Input into Markdown with Frontmatter

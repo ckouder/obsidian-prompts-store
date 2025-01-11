@@ -1,5 +1,4 @@
 ---
-prompt-name: Get a list of todos and dones
 prompt-desc: Get a list of todos and dones from given text
 ---
 Please analyze the given text and create two task lists:

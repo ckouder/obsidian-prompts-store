@@ -14,16 +14,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: 22
+          bun-version: latest
           
       - name: Install dependencies
-        run: npm install gray-matter
+        run: bun install
+        
+      - name: Type check
+        run: bun run typecheck
         
       - name: Generate prompts.json
-        run: node .github/scripts/generate-prompts.js
+        run: bun run generate
         
       - name: Check for changes
         id: git-check

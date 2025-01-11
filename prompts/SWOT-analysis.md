@@ -1,5 +1,4 @@
 ---
-prompt-name: SWOT Analysis
 prompt-desc: Conduct SWOT Analysis on given text
 ---
 Please analyze the provided text and conduct a detailed SWOT (Strengths, Weaknesses, Opportunities, Threats) analysis by following these guidelines:
