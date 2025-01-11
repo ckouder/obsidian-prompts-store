@@ -23,7 +23,7 @@ jobs:
         run: bun install gray-matter
         
       - name: Generate prompts.json
-        run: bun run generate
+        run: bun run .github/scripts/generate-prompts.ts
         
       - name: Check for changes
         id: git-check
