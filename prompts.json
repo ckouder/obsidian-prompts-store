@@ -1,15 +1,15 @@
 [
   {
-    "filename": "organize-and-categorize",
-    "prompt-id": "acd04e07",
-    "prompt-name": "Organize and categorize",
-    "prompt-desc": "Organize and categorize input text"
-  },
-  {
     "filename": "SWOT-analysis",
     "prompt-id": "0cb84ad4",
     "prompt-name": "SWOT analysis",
     "prompt-desc": "Conduct SWOT Analysis on given text"
+  },
+  {
+    "filename": "fact-opinion-feeling",
+    "prompt-id": "8843471e",
+    "prompt-name": "Fact opinion feeling",
+    "prompt-desc": "Categorize text to fact, opinion, and feeling in frontmatter"
   },
   {
     "filename": "get-todos-and-dones",
