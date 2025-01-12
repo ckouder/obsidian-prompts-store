@@ -1,5 +1,6 @@
 ---
 prompt-desc: Organize and categorize input text
+prompt-id: acd04e07
 ---
 # Summarize and Categorize Input into Markdown with Frontmatter
 

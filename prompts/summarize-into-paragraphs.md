@@ -1,5 +1,6 @@
 ---
 prompt-desc: Summarize long text into paragraphs
+prompt-id: 1fd60f7c
 ---
 You are an assistant tasked with transforming long text into a well-structured and reader-friendly format. Your task is:
 

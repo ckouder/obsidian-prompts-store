@@ -2,13 +2,19 @@ import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import matter from 'gray-matter';
+import crypto from 'node:crypto';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 interface Prompt {
   filename: string;
+  'prompt-id': string;
   'prompt-name': string;
   'prompt-desc': string;
+}
+
+function generateRandomId(): string {
+  return crypto.randomBytes(4).toString('hex');
 }
 
 function validateFilename(file: string): void {
@@ -33,6 +39,24 @@ function formatPromptName(filename: string): string {
          nameWithoutExt.slice(1).replace(/-/g, ' ');
 }
 
+function ensurePromptId(filePath: string): string {
+  const content = readFileSync(filePath, 'utf8');
+  const { data, content: fileContent } = matter(content);
+  
+  if (!data['prompt-id']) {
+    // Generate new ID if none exists
+    const newId = generateRandomId();
+    data['prompt-id'] = newId;
+    
+    // Write back to file with new ID
+    const updatedContent = matter.stringify(fileContent, data);
+    writeFileSync(filePath, updatedContent);
+    return newId;
+  }
+  
+  return data['prompt-id'];
+}
+
 function generatePrompts(rootDir: string): void {
   // Get all markdown files in the root directory
   const promptsDir = join(rootDir, 'prompts');
@@ -44,13 +68,18 @@ function generatePrompts(rootDir: string): void {
 
   // Process each file and extract frontmatter
   const prompts: Prompt[] = files.map(file => {
-    const content = readFileSync(join(promptsDir, file), 'utf8');
+    const filePath = join(promptsDir, file);
+    const content = readFileSync(filePath, 'utf8');
     const { data } = matter(content);
+    
+    // Ensure the file has a prompt ID
+    const promptId = ensurePromptId(filePath);
     
     // Only include files that have prompt-desc
     if (data['prompt-desc']) {
       return {
         filename: file.replace(/\.md$/, ''),
+        'prompt-id': promptId,
         'prompt-name': formatPromptName(file),
         'prompt-desc': data['prompt-desc']
       };
