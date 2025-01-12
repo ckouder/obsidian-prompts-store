@@ -1,21 +1,15 @@
 [
   {
-    "filename": "summarize-into-paragraphs",
-    "prompt-id": "1fd60f7c",
-    "prompt-name": "Summarize into paragraphs",
-    "prompt-desc": "Summarize long text into paragraphs"
-  },
-  {
-    "filename": "echo",
-    "prompt-id": "8ddb17dc",
-    "prompt-name": "Echo",
-    "prompt-desc": "Echo Input without changing anything"
-  },
-  {
     "filename": "organize-and-categorize",
     "prompt-id": "acd04e07",
     "prompt-name": "Organize and categorize",
     "prompt-desc": "Organize and categorize input text"
+  },
+  {
+    "filename": "SWOT-analysis",
+    "prompt-id": "0cb84ad4",
+    "prompt-name": "SWOT analysis",
+    "prompt-desc": "Conduct SWOT Analysis on given text"
   },
   {
     "filename": "get-todos-and-dones",
@@ -24,9 +18,15 @@
     "prompt-desc": "Get a list of todos and dones from given text"
   },
   {
-    "filename": "SWOT-analysis",
-    "prompt-id": "0cb84ad4",
-    "prompt-name": "SWOT analysis",
-    "prompt-desc": "Conduct SWOT Analysis on given text"
+    "filename": "Echo",
+    "prompt-id": "8ddb17dc",
+    "prompt-name": "Echo",
+    "prompt-desc": "Echo Input without changing anything"
+  },
+  {
+    "filename": "summarize-into-paragraphs",
+    "prompt-id": "1fd60f7c",
+    "prompt-name": "Summarize into paragraphs",
+    "prompt-desc": "Summarize long text into paragraphs"
   }
 ]
